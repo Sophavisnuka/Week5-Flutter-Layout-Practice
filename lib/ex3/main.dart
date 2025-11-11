@@ -73,30 +73,32 @@ class CardComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
+    return Card(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        color: Colors.white,  
       ),
-      padding: EdgeInsets.all(20),
       margin: EdgeInsets.only(bottom: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            product.imageUrl,
-            width: 50,
-          ),
-          Text(
-            product.title,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              product.imageUrl,
+              width: 50,
             ),
-          ),
-          Text(product.description),
-        ],
-      ),
+            Text(
+              product.title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(product.description),
+          ],
+        ),
+      )
     );
   }
 }
