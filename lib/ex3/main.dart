@@ -24,23 +24,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       home: Scaffold(
+        backgroundColor: Colors.blue,
         appBar: AppBar(
           centerTitle: false,
           title: const Text('Products')
         ),
-        body: Center(
-          child: Container(
+        body: Padding(
           padding: const EdgeInsets.all(16.0),
-            color: Colors.blue,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                CardComponent(product: Product.dart),
-                CardComponent(product: Product.flutter),
-                CardComponent(product: Product.firebase),
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              CardComponent(product: Product.dart),
+              CardComponent(product: Product.flutter),
+              CardComponent(product: Product.firebase),
+            ],
           ),
         ),
       ),
