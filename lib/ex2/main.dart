@@ -63,7 +63,7 @@ class CustomButton extends StatelessWidget {
   });
 
   // helper to get color based on button type
-  Color getButtonColor() {
+  Color get buttonColors {
     switch (type) {
       case ButtonType.primary:
         return Colors.blue;
@@ -73,8 +73,8 @@ class CustomButton extends StatelessWidget {
         return Colors.grey;
     }
   }
-  // helper method to build the row children
-  List<Widget> rowPosition () {
+
+  List<Widget> get buttonWidgets  {
     final iconWidget = Icon(icon, size: 30, color: Colors.white);
     final textWidget = Text(label, style: TextStyle(color: Colors.white, fontSize: 20));
     final spacing = SizedBox(width: 10);
@@ -83,20 +83,21 @@ class CustomButton extends StatelessWidget {
     } else {
       return [textWidget, spacing, iconWidget];
     }
-  }
 
+  }
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       padding: EdgeInsets.all(30),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: getButtonColor(),
+        color: buttonColors,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: rowPosition(),
+        children: buttonWidgets
       ),
     );
   }

@@ -10,7 +10,6 @@ void main () {
     ),
   );
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -35,6 +34,7 @@ class MyApp extends StatelessWidget {
                 icon: Icon(Icons.menu, color: Colors.white),
                 iconSize: 30,
                 onPressed: () {},
+                // Text("Press me"),
               ),
             ),
           ],
@@ -42,8 +42,6 @@ class MyApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListView(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               WeatherCard(weather: WeatherCondition.sunny, startColor: Colors.purple, endColor: Colors.deepPurple),
               WeatherCard(weather: WeatherCondition.cloudy, startColor: Colors.green, endColor: Colors.lightGreen),
@@ -130,7 +128,7 @@ class WeatherCard extends StatelessWidget {
                   ],
                 ),
                 Stack(
-                  clipBehavior: Clip.hardEdge,
+                  clipBehavior: Clip.none,
                   alignment: Alignment.center,
                   children: [
                     Positioned(
@@ -140,7 +138,7 @@ class WeatherCard extends StatelessWidget {
                         height: 130,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.purple.withOpacity(0.4),
+                          color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.2),
                         ),
                       ),
                     ),
